@@ -1,193 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>KPVAULT – Privacy Policy</title>
-  <meta name="description" content="KPVAULT Privacy Policy. We collect no personal data. All encryption happens locally on your device." />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KPVAULT - Uncompromising Security.</title>
+  <meta name="description" content="Local-first, Zero-Knowledge password and Authenticator manager.">
   <style>
     :root {
-      --bg: #313338;
+      --bg: #1E1F22;
       --card: #2B2D31;
-      --dark: #1E1F22;
       --accent: #5865F2;
       --text: #FFFFFF;
       --muted: #949BA4;
-      --danger: #DA373C;
     }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       background: var(--bg);
       color: var(--text);
-      font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
-      line-height: 1.7;
-      padding: 40px 20px 80px;
-    }
-    .container { max-width: 780px; margin: 0 auto; }
-    header {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
       display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    .nav {
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
       align-items: center;
-      gap: 16px;
-      margin-bottom: 48px;
-      padding-bottom: 24px;
-      border-bottom: 1px solid var(--dark);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
     }
-    .shield {
-      width: 52px; height: 52px;
-      background: var(--accent);
-      border-radius: 14px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 26px; flex-shrink: 0;
-    }
-    h1 { font-size: 28px; font-weight: 700; }
-    h1 span { color: var(--muted); font-weight: 400; font-size: 14px; display: block; margin-top: 4px; }
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: #43b58120;
-      color: #43b581;
-      border: 1px solid #43b581;
-      padding: 6px 14px;
-      border-radius: 100px;
-      font-size: 13px;
-      font-weight: 600;
-      margin-bottom: 36px;
-    }
-    .badge::before { content: "✓"; }
-    h2 {
-      font-size: 18px;
-      font-weight: 700;
-      color: var(--text);
-      margin: 40px 0 12px;
-      padding-left: 12px;
-      border-left: 3px solid var(--accent);
-    }
-    p { color: var(--muted); margin-bottom: 12px; }
-    ul { color: var(--muted); padding-left: 22px; margin-bottom: 12px; }
-    ul li { margin-bottom: 6px; }
-    .card {
-      background: var(--card);
-      border-radius: 12px;
-      padding: 20px 24px;
-      margin-bottom: 16px;
-      border: 1px solid var(--dark);
-    }
-    .card strong { color: var(--text); }
-    .highlight {
-      background: #5865F220;
-      border: 1px solid var(--accent);
-      border-radius: 10px;
-      padding: 18px 22px;
-      color: var(--text);
-      margin: 24px 0;
-      font-size: 15px;
-    }
-    .warning {
-      background: #DA373C18;
-      border: 1px solid var(--danger);
-      border-radius: 10px;
-      padding: 18px 22px;
-      color: #ff7b7b;
-      margin: 24px 0;
-      font-size: 14px;
-    }
-    footer {
-      margin-top: 60px;
-      padding-top: 24px;
-      border-top: 1px solid var(--dark);
-      text-align: center;
+    .logo { font-size: 24px; font-weight: 900; letter-spacing: 2px; }
+    .nav-links a {
       color: var(--muted);
-      font-size: 13px;
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 14px;
+      font-weight: 500;
+      transition: color 0.2s;
     }
-    a { color: var(--accent); text-decoration: none; }
-    a:hover { text-decoration: underline; }
+    .nav-links a:hover { color: var(--text); }
+    .hero {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 60px 20px;
+    }
+    .badge {
+      background: rgba(88, 101, 242, 0.15);
+      color: var(--accent);
+      padding: 8px 16px;
+      border-radius: 50px;
+      font-size: 13px;
+      font-weight: bold;
+      margin-bottom: 30px;
+      border: 1px solid rgba(88, 101, 242, 0.3);
+    }
+    h1 {
+      font-size: 48px;
+      font-weight: 800;
+      margin-bottom: 20px;
+      max-width: 800px;
+      line-height: 1.2;
+    }
+    p.subtitle {
+      font-size: 18px;
+      color: var(--muted);
+      max-width: 600px;
+      margin-bottom: 40px;
+    }
+    .cta-btn {
+      background: var(--accent);
+      color: #fff;
+      padding: 16px 32px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+      box-shadow: 0 4px 14px rgba(88, 101, 242, 0.4);
+      transition: transform 0.2s;
+    }
+    .cta-btn:hover { transform: translateY(-2px); }
+    .features {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    .feature-card {
+      background: var(--card);
+      padding: 24px;
+      border-radius: 16px;
+      flex: 1;
+      min-width: 280px;
+      border: 1px solid rgba(255,255,255,0.05);
+      text-align: left;
+    }
+    .feature-card h3 { margin-bottom: 10px; font-size: 18px; }
+    .feature-card p { color: var(--muted); font-size: 14px; }
+    footer {
+      padding: 30px 40px;
+      text-align: center;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      color: var(--muted);
+      font-size: 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .footer-links a { color: var(--muted); text-decoration: none; margin-left: 15px; }
+    .footer-links a:hover { text-decoration: underline; }
   </style>
 </head>
 <body>
-  <div class="container">
+  
+  <nav class="nav">
+    <div class="logo">KPVAULT</div>
+    <div class="nav-links">
+      <a href="/privacy">Privacy</a>
+      <a href="/terms">Terms</a>
+    </div>
+  </nav>
 
-    <header>
-      <div class="shield">🔐</div>
-      <div>
-        <h1>KPVAULT
-          <span>Privacy Policy — Last updated: April 2026</span>
-        </h1>
+  <main class="hero">
+    <div class="badge">Zero-Knowledge Architecture</div>
+    <h1>The uncompromising vault for your digital identity.</h1>
+    <p class="subtitle">A local-first password and 2FA authenticator manager. Protected by AES-256 encryption, Biometric multi-factor gates, and a 12-word recovery seed.</p>
+    <a href="#" class="cta-btn">Available on Android & iOS</a>
+    
+    <div class="features">
+      <div class="feature-card">
+        <h3>🛡️ Zero-Knowledge</h3>
+        <p>Your data never leaves your device unless you choose to enable the encrypted cloud. We have no master keys.</p>
       </div>
-    </header>
-
-    <div class="badge">Zero Data Collection Policy</div>
-
-    <div class="highlight">
-      <strong>The short version:</strong> KPVAULT never collects, transmits, or sells your personal data. Everything is encrypted locally on your device using keys that only you control. We have no access to your passwords, 2FA secrets, or recovery phrase — ever.
+      <div class="feature-card">
+        <h3>🔑 Dual-Factor Core</h3>
+        <p>Manage your passwords and generate rolling 2FA codes directly from inside your secure vault.</p>
+      </div>
+      <div class="feature-card">
+        <h3>🔒 2-Step Defense</h3>
+        <p>Enable the ultimate lock requiring both Biometrics and a PIN code for every sensitive action.</p>
+      </div>
     </div>
+  </main>
 
-    <h2>1. Who We Are</h2>
-    <p>KPVAULT is an independent mobile application for secure, local-first password and two-factor authentication management. The app is developed and maintained as a personal privacy tool.</p>
-
-    <h2>2. What Data We Collect</h2>
-    <div class="card">
-      <strong>Personal Information</strong>
-      <p style="margin-top:8px;">None. We do not collect your name, email, phone number, or any identifying information.</p>
+  <footer>
+    <div>© 2026 KPVAULT. Built for the paranoid, by the paranoid.</div>
+    <div class="footer-links">
+      <a href="/privacy">Privacy Policy</a>
+      <a href="/terms">Terms of Service</a>
     </div>
-    <div class="card">
-      <strong>Passwords & 2FA Secrets</strong>
-      <p style="margin-top:8px;">All credentials are stored exclusively on your device using React Native's <code>AsyncStorage</code> and encrypted using AES-256. We never read, transmit, or see your stored credentials.</p>
-    </div>
-    <div class="card">
-      <strong>Recovery Phrase (Seed)</strong>
-      <p style="margin-top:8px;">Your 12-word recovery phrase is generated locally using cryptographically secure randomness. It is never transmitted to any server. It is purged from memory immediately after setup.</p>
-    </div>
-    <div class="card">
-      <strong>Analytics & Crash Reporting</strong>
-      <p style="margin-top:8px;">We do not use any analytics SDK, crash reporting service, or advertising framework. No telemetry of any kind is collected.</p>
-    </div>
+  </footer>
 
-    <h2>3. Cloud Sync (Optional)</h2>
-    <p>KPVAULT offers an optional zero-knowledge cloud sync feature. If you choose to use it:</p>
-    <ul>
-      <li>Your vault data is <strong>AES-256 encrypted locally</strong> using a key derived from your recovery phrase before being uploaded.</li>
-      <li>The encryption key is derived using PBKDF2 and never leaves your device.</li>
-      <li>Your Firebase document is identified only by a SHA-256 hash of your seed phrase — no username, email, or account is required.</li>
-      <li>We (and Firebase/Google) cannot decrypt your data. Only someone with your recovery phrase can.</li>
-      <li>If you do not use cloud sync, no data ever leaves your device.</li>
-    </ul>
-    <div class="highlight">
-      Firebase (Google) is the cloud storage provider. Their infrastructure-level privacy policy applies to the encrypted blob stored. They cannot access its contents.
-    </div>
-
-    <h2>4. Biometric Data</h2>
-    <p>KPVAULT may use your device's biometric hardware (fingerprint, Face ID) for authentication. This is handled entirely by the device operating system through the <code>expo-local-authentication</code> library. Biometric data never leaves your device and is never accessible to KPVAULT.</p>
-
-    <h2>5. Data Export</h2>
-    <p>The app provides an optional "Export Vault as JSON" feature. This creates a local file on your device containing your credentials in plain text. You are solely responsible for the security of exported files. We recommend encrypting any exported backup before storing it externally.</p>
-    <div class="warning">
-      ⚠️ Exported files are <strong>not encrypted</strong>. Store and share them with extreme caution.
-    </div>
-
-    <h2>6. Third-Party Services</h2>
-    <p>KPVAULT uses the following third-party services or libraries:</p>
-    <ul>
-      <li><strong>Firebase Firestore</strong> (optional cloud sync) — Google's privacy policy applies to encrypted blobs stored on their infrastructure.</li>
-      <li><strong>expo-local-authentication</strong> — Biometric auth via the device OS. No data leaves the device.</li>
-      <li><strong>crypto-js</strong> — Local AES-256 encryption library. No network calls.</li>
-      <li><strong>otplib / totp-generator</strong> — Local TOTP code generation. No network calls.</li>
-    </ul>
-
-    <h2>7. Children's Privacy</h2>
-    <p>KPVAULT is not directed at children under 13 years of age. We do not knowingly collect any information from children.</p>
-
-    <h2>8. Changes to This Policy</h2>
-    <p>We may update this Privacy Policy from time to time. Any changes will be reflected on this page with an updated date. Continued use of the app constitutes acceptance of the updated policy.</p>
-
-    <h2>9. Contact</h2>
-    <p>If you have any questions about this Privacy Policy, you can reach out via the app's support channel or the developer's contact listed on the Google Play Store page.</p>
-
-    <footer>
-      <p>© 2026 KPVAULT. All rights reserved.</p>
-      <p style="margin-top:6px;">Built with privacy as the foundation — not an afterthought.</p>
-    </footer>
-
-  </div>
 </body>
 </html>
